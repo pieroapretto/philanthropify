@@ -13,19 +13,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   + profile data
   + account activity
 * Redux store
-+ reducers
-+ actions
-+ selectors
+  + reducers
+  + actions
+  + selectors
 * Routing
-+ dynamic post paths
+  + dynamic post paths
 * Social sharing
 * Post
-+ post component
-+ post content
-+ post likes
-+ post comments
-+ tipping tool
+  + post component
+  + post content
+  + post likes
+  + post comments
+  + tipping tool
 * create post component
-+ file uploader
-* resource pool
-
+  + file uploader
+  + resource pool
+* inbox
+  + create message
+  + send message
