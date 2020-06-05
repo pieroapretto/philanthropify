@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## To dos
 
 * Login
-+ form
-+ authentication
-+ facebook login
-+ login data store 
+  + form
+  + authentication
+  + facebook login
+  + login data store 
