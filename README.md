@@ -16,6 +16,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   + reducers
   + actions
   + selectors
+  + schemas
 * Routing
   + dynamic post paths
 * Social sharing
@@ -25,6 +26,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   + post likes
   + post comments
   + tipping tool
+  + tipping amount
 * create post component
   + file uploader
   + resource pool
