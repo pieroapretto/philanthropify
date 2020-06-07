@@ -1,15 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import LoginPage from './components/pages/LoginPage';
+import { Switch, Route } from 'react-router-dom';
+import  DashboardPage from './components/pages/Dashboard';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <p>TEST!</p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -18,6 +20,10 @@ function App() {
         >
           Learn React
         </a>
+        <Switch>
+          <Route path="/" component={LoginPage} exact={true}/>
+          <Route path="/dashboard" component={DashboardPage}/>
+        </Switch>
       </header>
     </div>
   );

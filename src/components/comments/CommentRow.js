@@ -21,6 +21,7 @@ const Post = (post) => {
                 </div>
             </div>
             <div className="row">
+                
                 <div className="col">
                     <PostToolBar/>
                     <div>{post.like_count}</div>
