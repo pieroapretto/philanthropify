@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { startLogout } from '../../actions/user';
+import ConnectAccountButton from '../buttons/ConnectButton';
 
 const DashboardPage = ({ name, startLogout }) => (
     <div>
         <p>Logged in as {name}!</p>
+        <ConnectAccountButton/>
         <button onClick={startLogout}>Logout</button>
     </div>
 );

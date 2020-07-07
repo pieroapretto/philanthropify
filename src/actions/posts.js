@@ -1,4 +1,4 @@
-import uuid from 'uuid';
+import uuid from 'uuidv4';
 import { firebase_service }  from '../services/firebase_service';
 
 // 'ADD_POSTS'
