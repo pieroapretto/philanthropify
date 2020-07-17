@@ -5,14 +5,14 @@ import ConnectAccountButton from '../buttons/ConnectButton';
 
 const DashboardPage = ({ name, startLogout }) => (
     <div>
-        <p>Logged in as {name}!</p>
+        <p>Logged in as {name}</p>
         <ConnectAccountButton/>
         <button onClick={startLogout}>Logout</button>
     </div>
 );
 
 const mapStateToProps = state => ({
-    name: state.user.name
+    name: state.user.displayName
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -2,12 +2,20 @@ import { firebase, googleAuthProvider } from '../firebase/firebase';
 
 export const login = ({
     uid,
-    displayName=''
+    displayName='',
+    email='',
+    photoURL='images/samples/avatar_default.png',
+    bannerPhoto='images/samples/banner_default.jpg',
+    aboutMe=''
   }={}) => ({
     type: 'LOGIN',
     user: {
-      uid,
-      name:displayName
+      displayName,
+      email,
+      aboutMe,
+      userName: displayName + uid,
+      avatarPhoto: photoURL,
+      bannerPhoto: bannerPhoto,
     }
 });
 

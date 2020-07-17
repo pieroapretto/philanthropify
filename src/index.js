@@ -7,6 +7,12 @@ import { Provider } from 'react-redux';
 import { firebase } from './firebase/firebase';
 import { login, logout } from './actions/user';
 
+// Import bootstrap css
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+//import custom sass
+import './styles/main.scss';
+
 const store = configureStore();
 
 const jsx = (
@@ -31,7 +37,7 @@ firebase.auth().onAuthStateChanged((user) => {
     store.dispatch(login(user));
     renderApp();
     if (history.location.pathname === '/') {
-      history.push('/dashboard');
+      history.push('/account');
     }
   } else {
     store.dispatch(logout());

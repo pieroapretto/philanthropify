@@ -46,7 +46,7 @@ export const addPost = (
         title,
         type,
         like_count,
-        timestamp = setTimeValue(post.timestamp),
+        timestamp: setTimeValue(post.timestamp),
         text,
         image,
         comment_count,
@@ -57,6 +57,14 @@ export const addPost = (
         rating
     }
 });
+
+export const saveImage = (file) => {
+  return () => {
+    return firebase_service.saveImage(file).then(data => {
+      return data;
+    });
+  }
+};
 
 // REMOVE_POST
 export const removePost = ({ id } = {}) => ({
