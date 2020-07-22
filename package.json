@@ -67,7 +67,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack-bundle-analyzer": "^3.6.1",
-    "webpack-dev-server": "2.5.1"
+    "webpack-dev-server": "3.1.11"
   },
   "eslintConfig": {
     "extends": "react-app"
