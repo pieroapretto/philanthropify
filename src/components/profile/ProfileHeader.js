@@ -32,9 +32,4 @@ const mapStateToProps = state => ({
     aboutMe: state.user.aboutMe
 });
 
-
-const mapDispatchToProps = dispatch => ({
-
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileHeader);
+export default connect(mapStateToProps, null)(ProfileHeader);

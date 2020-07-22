@@ -1,5 +1,6 @@
 import uuid from 'uuidv4';
-import { firebase_service }  from '../services/firebase_service';
+import { firebase_service } from '../services/firebase_service';
+import { metadata_service } from '../services/metadata_service';
 
 // 'ADD_POSTS'
 export const addPosts = (posts) => ({
@@ -61,6 +62,14 @@ export const addPost = (
 export const saveImage = (file) => {
   return () => {
     return firebase_service.saveImage(file).then(data => {
+      return data;
+    });
+  }
+};
+
+export const getLinkMetaData = (link) => {
+  return () => {
+    return metadata_service.getLinkMetaData(link).then(data => {
       return data;
     });
   }

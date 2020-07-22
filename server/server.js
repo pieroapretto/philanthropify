@@ -3,7 +3,18 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const router = express.Router();
+const got = require('got');
+const metascraper = require('metascraper')([
+  require('metascraper-author')(),
+  require('metascraper-date')(),
+  require('metascraper-description')(),
+  require('metascraper-image')(),
+  require('metascraper-logo')(),
+  require('metascraper-clearbit')(),
+  require('metascraper-publisher')(),
+  require('metascraper-title')(),
+  require('metascraper-url')()
+]);
 
 if(process.env.NODE_ENV !== 'production') {
   require('dotenv').config({ path: '.env.development' });
@@ -174,4 +185,11 @@ app.get("/get-oauth-link", async (req, res) => {
   const url = `https://connect.stripe.com/oauth/authorize?${args.toString()}`;
 
   return res.send({ url });
+});
+
+app.post("/get-metadata", async (req, res) => {
+  const { targetUrl } = req.body;
+  const { body: html, url } = await got(targetUrl);
+  const metadata = await metascraper({ html, url })
+  return res.send(metadata);
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ProfileHeader from '../profile/ProfileHeader';
-import ProfileForm from '../profile/ProfileForm';
+import PostForm from '../post/PostForm';
 
 const ProfilePage = ({ bannerPhoto }) => (
     <div id="profile_dashboard">
@@ -12,7 +12,7 @@ const ProfilePage = ({ bannerPhoto }) => (
                 </div>
             </div>
             <ProfileHeader/>
-            <ProfileForm/>
+            <PostForm/>
             <div className="row">
                 <div className="col">
                     <div className="profile-user-posts">
@@ -27,8 +27,4 @@ const mapStateToProps = state => ({
     bannerPhoto: state.user.bannerPhoto
 });
 
-const mapDispatchToProps = dispatch => ({
-
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage);
+export default connect(mapStateToProps, null)(ProfilePage);
