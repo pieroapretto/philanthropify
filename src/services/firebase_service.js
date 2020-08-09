@@ -7,7 +7,7 @@ class FireBaseService {
             
             uploadImageTask.on(firebase.storage.TaskEvent.STATE_CHANGED ,
                 function (snapshot) {
-                    console.log(snapshot.state);
+                    console.info(snapshot.state);
                 },
                 function (err) {
                     reject('Error posting image to database. Error code: ' + err.code);

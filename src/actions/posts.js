@@ -1,4 +1,4 @@
-import uuid from 'uuidv4';
+import { uuid } from 'uuidv4';
 import { firebase_service } from '../services/firebase_service';
 import { metadata_service } from '../services/metadata_service';
 
@@ -27,35 +27,34 @@ export const addPosts = (posts) => ({
 // ADD_POST
 export const addPost = (
     {
-        id,
-        title = '',
         type = '',
         like_count = 0,
-        timestamp,
         text = '',
-        image = null,
+        timestamp = null,
         comment_count = 0,
-        comments,
-        poll,
+        comments = [],
         tips_total = 0,
         is_favorite = false,
-        rating = 0
+        rating = 0,
+        imageUrl = '',
+        link = {},
+        authorId = null
     } = {}) => ({
     type: 'ADD_POST',
     post: {
-        id,
-        title,
+        id: uuid(),
+        authorId,
         type,
         like_count,
-        timestamp: setTimeValue(post.timestamp),
+        timestamp: setTimeValue(timestamp),
         text,
-        image,
         comment_count,
         comments,
-        poll,
         tips_total,
         is_favorite,
-        rating
+        rating,
+        imageUrl,
+        link
     }
 });
 
@@ -89,7 +88,7 @@ export const editPost = (id, updates) => ({
 });
 
 const setTimeValue = (timestamp) => {
-  let date = new Date(timestamp);
+  let date = timestamp ? new Date(timestamp) : new Date();
   return date.getTime();
 }
 

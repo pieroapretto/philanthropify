@@ -10,6 +10,7 @@ export const login = ({
   }={}) => ({
     type: 'LOGIN',
     user: {
+      uid,
       displayName,
       email,
       aboutMe,
