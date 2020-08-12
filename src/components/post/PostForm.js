@@ -7,12 +7,12 @@ import PostLinkPreview from './PostLinkPreview';
 import PostImagePreview from './PostLinkPreview';
 
 const PostForm = ({ userId, saveImage,  getLinkMetaData, savePost }) => {
-    const [imagePreview, setImagePreview] = useState(false);
-    const [linkPreview, setLinkPreview] = useState(false);
+    const [imagePreview, setImagePreview] = useState(null);
+    const [linkPreview, setLinkPreview] = useState(null);
     const [postText, setPostText] = useState('');
     const hiddenFileInput = useRef(null);
 
-    const handleUploadButtonClick = event => {
+    const handleUploadButtonClick = (event) => {
         hiddenFileInput.current.click();
     }
 
@@ -26,7 +26,7 @@ const PostForm = ({ userId, saveImage,  getLinkMetaData, savePost }) => {
 
     const handlePreviewLink = (link) => {
         getLinkMetaData(link).then(metadata => {
-            metadata.url = parsePreviweLinkUrl(metadata.url);
+            metadata.hostUrl = parsePreviweLinkUrl(metadata.url);
             setLinkPreview(metadata);
         });
     }
@@ -47,7 +47,7 @@ const PostForm = ({ userId, saveImage,  getLinkMetaData, savePost }) => {
         });
     }
 
-    const handleFormChange = event => {
+    const handleFormChange = (event) => {
         event.preventDefault();
 
         const inputText = event.target.value;
